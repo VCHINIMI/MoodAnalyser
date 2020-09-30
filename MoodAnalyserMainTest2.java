@@ -22,7 +22,7 @@ public class MoodAnalyserMainTest2 {
 	
 	@Test
 	public void whenHappyReturnHappy() {
-		MoodAnalyserMain mdMain = new MoodAnalyserMain("I'm HAPPY");
+		MoodAnalyserMain mdMain = new MoodAnalyserMain();
 		assertEquals("HAPPY", mdMain.analyseMood());
 	}
 	
