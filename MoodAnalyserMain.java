@@ -9,8 +9,8 @@ public class MoodAnalyserMain{
 	}
 	
 	public String analyseMood() {
-		MoodAnalyserMain moodAnalyser = new MoodAnalyserMain();
-		if((moodAnalyser.message).contains("HAPPY"))
+		//MoodAnalyserMain moodAnalyser = new MoodAnalyserMain("Iam HAPPY");
+		if(message.contains("HAPPY"))
 			return "HAPPY";
 		else 
 			return "SAD";

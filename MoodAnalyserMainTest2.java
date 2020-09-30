@@ -19,9 +19,11 @@ public class MoodAnalyserMainTest2 {
 		MoodAnalyserMain mdMain = new MoodAnalyserMain("I'm SAD");
 		assertEquals("SAD", mdMain.analyseMood());
 	}
+	
 	@Test
 	public void whenHappyReturnHappy() {
 		MoodAnalyserMain mdMain = new MoodAnalyserMain("I'm HAPPY");
 		assertEquals("HAPPY", mdMain.analyseMood());
 	}
+	
 }
