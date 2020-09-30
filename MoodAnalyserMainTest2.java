@@ -17,13 +17,46 @@ public class MoodAnalyserMainTest2 {
 	@Test
 	public void whenSadReturnSAD() {
 		MoodAnalyserMain mdMain = new MoodAnalyserMain("I'm SAD");
-		assertEquals("SAD", mdMain.analyseMood());
+		try {
+			assertEquals("SAD", mdMain.analyseMood());
+		} catch (MoodAnalysisException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
 	}
 	
 	@Test
 	public void whenHappyReturnHappy() {
 		MoodAnalyserMain mdMain = new MoodAnalyserMain();
-		assertEquals("HAPPY", mdMain.analyseMood());
+		try {
+			assertEquals("HAPPY", mdMain.analyseMood());
+		} catch (MoodAnalysisException e) {
+			System.out.println(e.getMessage());
+			
+		}
 	}
-	
+	@Test
+	public void testing_When_Null() {
+		String mood;
+		MoodAnalyserMain mdMain = new MoodAnalyserMain();
+		try {
+			mood = moodMain.analyseMood();
+		}
+		catch(MoodAnalysisException e) {
+			System.out.println(e.getMessage());
+			assertEquals(MoodAnalysisException.ExceptionType.ENTERED_NULL, e.exceptionType);
+		}
+	}
+	@Test
+	public void testing_When_Empty() {
+		String mood;
+		MoodAnalyserMain mdMain = new MoodAnalyserMain("");
+		try {
+			mood = moodMain.analyseMood();
+		}
+		catch(MoodAnalysisException e) {
+			System.out.println(e.getMessage());
+			assertEquals(MoodAnalysisException.ExceptionType.ENTERED_EMPTY, e.exceptionType);
+		}
+	}
 }
