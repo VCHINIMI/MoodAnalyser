@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+
+
 public class MoodAnalyserMainTest2 {
 	public MoodAnalyserMain moodMain;
 	
@@ -14,10 +16,12 @@ public class MoodAnalyserMainTest2 {
 	
 	@Test
 	public void whenSadReturnSAD() {
-		assertEquals("SAD", moodMain.analyseMood("I am very SAD"));
+		MoodAnalyserMain mdMain = new MoodAnalyserMain("I'm SAD");
+		assertEquals("SAD", mdMain.analyseMood());
 	}
 	@Test
 	public void whenHappyReturnHappy() {
-		assertEquals("HAPPY", moodMain.analyseMood("I am very HAPPY"));
+		MoodAnalyserMain mdMain = new MoodAnalyserMain("I'm HAPPY");
+		assertEquals("HAPPY", mdMain.analyseMood());
 	}
 }
